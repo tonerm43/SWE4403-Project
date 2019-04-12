@@ -1,6 +1,10 @@
 # SWE4403-Project
 Design Patterns project winter 2019
 
+#### Project Description
+
+This project is a text-based dungeon crawler video game. The player character navigates from room to room, killing enemies, collecting items, and earning experience points. When enough XP is gained, the player "levels up", making their attacks more powerful, and enemy attacks less powerful.
+
 #### CS4015/SWE4403/CS6015 Project Requirement and Guide
 
 ##### Project due: Thursday, Apr. 18, 2019 at 4:30 pm (AST). Please note that due to University requirements, no extensions can be given.
@@ -20,3 +24,4 @@ Exported source code of your Java application in Eclipse or Rational Software Ar
 ##### Application Suggestion
 
 Write an application to schedule courses for the Bachelor of Computer Science undergraduate program. The system works as follows: professors receive teaching assignments and enter them into the system; they express preferences on their teaching times and enter them into the system; then courses are all combined into a single timetable, maximizing the number of teaching time preferences that can be accommodated. Some constraints on the courses are that there is a limited number of classes, each with a specified capacity (the user can enter these classes in the system); that one professor cannot teach in two courses at the same time; and a student who attends the program as indicated in the program schedule (which as well can be entered by the user) will be able to attend every course in her/his schedule for the semester. Electives can be superimposed, but there must be at least enough scheduled separately that a student can complete every semester of a program; whereas core courses cannot be superimposed. If you wish to use a model for the program, feel free to adapt the Computer Science program in the calendar, although the program described is not sophisticated enough to understand the distinction among electives. The design of this program lends itself to the use of both architectural and design patterns. Feel free to use an object-based database (as simple as just serializable Java objects), but other more formal databases (like SQL) can be used. Please gauge the complexity of this program, especially the matching algorithms, very carefully: the project is not about succeeding in implementing an optimal scheduling algorithm, but rather about implementing architectural and design patterns to create the project. The timeliness of your submission is paramount.
+
