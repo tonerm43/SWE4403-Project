@@ -8,7 +8,7 @@ public class Client {
         StringBuilder sb = new StringBuilder();
         sb.append("Welcome to DURGE ...");
         sb.append("\nFew survive the trials ahead");
-        sb.append("\nMay the patterns have mercy on your mortal soul\n");
+        sb.append("\nMay the patterns have mercy\non your mortal soul\n");
         frame.setScrollingText(sb.toString());
         frame.addButton();
     }

@@ -6,11 +6,13 @@ public class ScrollingTextDecorator extends JLabel {
 
     public ScrollingTextDecorator() {
         super();
+        this.setHorizontalAlignment(SwingConstants.CENTER);
     }
 
     public ScrollingTextDecorator(String labelText) {
         super();
         this.scrollingText(labelText);
+        this.setHorizontalAlignment(SwingConstants.CENTER);
     }
 
     @Override
@@ -48,6 +50,7 @@ public class ScrollingTextDecorator extends JLabel {
                     sb.append(labelString.charAt(i));
                 }
                 super.setText(HTML_PRE + sb.toString() + HTML_POST);
+                this.validate();
                 Thread.sleep(delay);
             }
         } catch (InterruptedException e) {
