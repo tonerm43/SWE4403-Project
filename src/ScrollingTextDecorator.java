@@ -1,5 +1,10 @@
 import javax.swing.*;
 
+/**
+ * Extension of JLabel for creating a scrolling text effect
+ * Also supports multi-line labels
+ * Pattern: Decorator
+ */
 public class ScrollingTextDecorator extends JLabel {
     private String HTML_PRE = "<html><body>";
     private String HTML_POST = "</html></body>";
@@ -36,13 +41,13 @@ public class ScrollingTextDecorator extends JLabel {
                         delay = 0;
                         break;
                     case ' ':
-                        delay = 100;
+                        delay = 1;//100;
                         break;
                     case '.':
-                        delay = 500;
+                        delay = 1;//500;
                         break;
                     default:
-                        delay = 300;
+                        delay = 1;//300;
                 }
                 if (delay == 0) {
                     sb.append("<br>");
@@ -50,7 +55,8 @@ public class ScrollingTextDecorator extends JLabel {
                     sb.append(labelString.charAt(i));
                 }
                 super.setText(HTML_PRE + sb.toString() + HTML_POST);
-                this.validate();
+                this.revalidate();
+                this.repaint();
                 Thread.sleep(delay);
             }
         } catch (InterruptedException e) {
