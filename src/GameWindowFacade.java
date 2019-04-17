@@ -9,14 +9,6 @@ public class GameWindowFacade extends JFrame implements ActionListener {
     private Container borderPane, gridPane;
     private JButton beginButton, newGame, loadGame;
 
-    public GameWindowFacade() {
-
-    }
-
-    public void setScrollingText(String labelText) {
-        this.scrollingLabel.setText(labelText);
-    }
-
     public void addButton() {
         beginButton = new JButton("BEGIN");
         beginButton.setHorizontalAlignment(SwingConstants.CENTER);
@@ -25,7 +17,7 @@ public class GameWindowFacade extends JFrame implements ActionListener {
         beginButton.addActionListener(this);
     }
 
-    public void startGame() {
+    public void splashScreen() {
         this.setSize(400, 400);
         this.setTitle("DURGE");
         borderPane = new Container();
@@ -46,7 +38,7 @@ public class GameWindowFacade extends JFrame implements ActionListener {
         sb.append("Welcome to DURGE ...");
         sb.append("\nFew survive the trials ahead");
         sb.append("\nMay the patterns have mercy\non your mortal soul\n");
-        this.setScrollingText(sb.toString());
+        this.scrollingLabel.setText(sb.toString());
         this.addButton();
     }
 

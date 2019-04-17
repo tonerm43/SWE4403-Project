@@ -15,6 +15,6 @@ public class GameArbiter {
 
     public void startGame() {
         frame = new GameWindowFacade();
-        frame.startGame();
+        frame.splashScreen();
     }
 }
