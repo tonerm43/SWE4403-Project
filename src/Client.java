@@ -1,5 +1,7 @@
 public class Client {
+
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        GameWindowFacade gwf = new GameWindowFacade();
+        gwf.startGame();
     }
 }
