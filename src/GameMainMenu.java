@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowEvent;
 import java.net.URL;
 
 public class GameMainMenu extends GameWindow {
@@ -46,6 +45,10 @@ public class GameMainMenu extends GameWindow {
         this.setVisible(true);
     }
 
+    /**
+     * Loads in the game logo to be displayed in the main menu
+     * @return The logo as an ImageIcon
+     */
     private ImageIcon loadImage() {
         ClassLoader classLoader = getClass().getClassLoader();
         URL resource = classLoader.getResource("durge_400.png");

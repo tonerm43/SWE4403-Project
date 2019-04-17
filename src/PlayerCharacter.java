@@ -17,6 +17,13 @@ public class PlayerCharacter extends Character {
 
     }
 
+    public void reset() {
+        health = 0;
+        attack = 0;
+        level = 0;
+        experience = 0;
+    }
+
     @Override
     public int getHealth() {
         return health;
@@ -60,5 +67,10 @@ public class PlayerCharacter extends Character {
     @Override
     public int attack(Character other) {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return health + "," + attack + "," + level + "," + experience;
     }
 }

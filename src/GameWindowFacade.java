@@ -17,15 +17,25 @@ public class GameWindowFacade extends JFrame implements ActionListener {
         windowStrategy.drawWindow();
     }
 
+    public void newGame(String playerName) {
+        PlayerMemento pm = new PlayerMemento();
+        pm.savePlayer(playerName);
+    }
+
+    public void loadGame(String playerName) {
+        PlayerMemento pm = new PlayerMemento();
+        pm.loadPlayer(playerName);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(beginButton)) {
             windowStrategy.destroy();
             mainMenu();
         } else if (e.getSource().equals(newGame)) {
-            System.out.println("new");
+            newGame(playerName.getText());
         } else if (e.getSource().equals(loadGame)) {
-            System.out.println("load");
+            loadGame(playerName.getText());
         }
     }
 }

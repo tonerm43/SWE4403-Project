@@ -25,3 +25,6 @@ hs_err_pid*
 # IntelliJ stuff
 .idea/
 out/
+
+# DURGE save files
+*.save
