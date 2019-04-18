@@ -3,6 +3,7 @@ public class EnemyCharacter extends Character {
     private int health;
     private int attack;
     private int level;
+    private EnemyCharacter next;
 
     public EnemyCharacter(String name) {
         this.name = name;
@@ -11,8 +12,8 @@ public class EnemyCharacter extends Character {
     @Override
     public void characterFor(int level) {
         this.level = level;
-        this.health = 30 * 25*level;
-        this.attack = 10 + 15*level;
+        this.health = 30 + 25*(level - 1);
+        this.attack = 10 + 15*(level - 1);
     }
 
     @Override
@@ -55,14 +56,23 @@ public class EnemyCharacter extends Character {
         this.level = level;
     }
 
-    @Override
-    public int attack(Character other) {
-        return 0;
-    }
-
     public EnemyCharacter clone() {
         EnemyCharacter clone = new EnemyCharacter(DesignPattern.getRandomPattern().toString());
         clone.characterFor(this.level);
+        clone.next = null;
+        this.next = clone;
         return clone;
+    }
+
+    public String toString() {
+        return "Level " + this.level + " " + this.name + ": " + this.health + " HP";
+    }
+
+    public EnemyIterator getIterator() {
+        return new EnemyIterator(this);
+    }
+
+    public EnemyCharacter getNext() {
+        return this.next;
     }
 }

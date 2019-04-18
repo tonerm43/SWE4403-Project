@@ -27,8 +27,8 @@ public class PlayerCharacter extends Character {
     @Override
     public void characterFor(int level) {
         this.level = level;
-        this.health = 100 * 25*level;
-        this.attack = 25 + 15*level;
+        this.health = 100 + 25*(level-1);
+        this.attack = 25 + 15*(level-1);
     }
 
     @Override
@@ -69,11 +69,6 @@ public class PlayerCharacter extends Character {
     @Override
     public void setLevel(int level) {
         this.level = level;
-    }
-
-    @Override
-    public int attack(Character other) {
-        return 0;
     }
 
     @Override

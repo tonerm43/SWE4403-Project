@@ -27,6 +27,8 @@ public class GameWindowFacade extends JFrame implements ActionListener {
     public void loadGame(String playerName) {
         PlayerCharacterBuilder builder = new PlayerCharacterBuilder();
         builder.loadCharacter(playerName);
+        windowStrategy = new GamePlayScreen();
+        windowStrategy.drawWindow();
     }
 
     @Override
@@ -38,6 +40,7 @@ public class GameWindowFacade extends JFrame implements ActionListener {
             windowStrategy.destroy();
             newGame(playerName.getText());
         } else if (e.getSource().equals(loadGame)) {
+            windowStrategy.destroy();
             loadGame(playerName.getText());
         }
     }

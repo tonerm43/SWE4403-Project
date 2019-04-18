@@ -50,7 +50,7 @@ public class GameMainMenu extends GameWindow {
      */
     private ImageIcon loadImage() {
         ClassLoader classLoader = getClass().getClassLoader();
-        URL resource = classLoader.getResource("durge_400.png");
+        URL resource = classLoader.getResource("durge.png");
         return new ImageIcon(resource);
     }
 }

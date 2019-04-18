@@ -7,7 +7,7 @@ import javax.swing.*;
  */
 public class ScrollingTextDecorator extends JLabel {
     private String HTML_PRE = "<html><body>";
-    private String HTML_POST = "</html></body>";
+    private String HTML_POST = "</body></html>";
 
     public ScrollingTextDecorator() {
         super();

@@ -17,6 +17,7 @@ As players level up, so do enemies.
 - State: GameArbiter uses a state pattern to determine who's turn it is in combat
 - Flyweight: States are flyweights, we only ever instantiate one of each and reuse the resources
 - Prototype: Both enemies in a level are the same, so one is created and cloned
+- Iterator: Enemies use an iterator to take attacks on their turn
 
 #### Architecture Used
 - Layered: Application Layer and Data Layer (Data layer uses text files for convenience)
