@@ -40,7 +40,6 @@ public class GameMainMenu extends GameWindow {
         borderPane.add(gridPane, BorderLayout.CENTER);
 
         this.add(borderPane);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }

@@ -1,10 +1,10 @@
 public class PlayerCharacter extends Character {
     private static PlayerCharacter instance;
 
+    private String name;
     private int health;
     private int attack;
     private int level;
-    private int experience;
 
     public static PlayerCharacter getInstance() {
         if (instance == null) {
@@ -18,10 +18,27 @@ public class PlayerCharacter extends Character {
     }
 
     public void reset() {
+        name = null;
         health = 0;
         attack = 0;
         level = 0;
-        experience = 0;
+    }
+
+    @Override
+    public void characterFor(int level) {
+        this.level = level;
+        this.health = 100 * 25*level;
+        this.attack = 25 + 15*level;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -55,22 +72,12 @@ public class PlayerCharacter extends Character {
     }
 
     @Override
-    public int getExperience() {
-        return experience;
-    }
-
-    @Override
-    public void setExperience(int experience) {
-        this.experience = experience;
-    }
-
-    @Override
     public int attack(Character other) {
         return 0;
     }
 
     @Override
     public String toString() {
-        return health + "," + attack + "," + level + "," + experience;
+        return name + "," + health + "," + attack + "," + level;
     }
 }

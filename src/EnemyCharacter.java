@@ -3,10 +3,10 @@ import java.util.Random;
 public class EnemyCharacter extends Character {
     private static EnemyCharacter instance;
 
+    private String name;
     private int health;
     private int attack;
     private int level;
-    private int experience;
 
     public static EnemyCharacter getInstance() {
         if (instance == null) {
@@ -17,6 +17,23 @@ public class EnemyCharacter extends Character {
 
     private EnemyCharacter() {
 
+    }
+
+    @Override
+    public void characterFor(int level) {
+        this.level = level;
+        this.health = 100 * 25*level;
+        this.attack = 25 + 15*level;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -47,16 +64,6 @@ public class EnemyCharacter extends Character {
     @Override
     public void setLevel(int level) {
         this.level = level;
-    }
-
-    @Override
-    public int getExperience() {
-        return experience;
-    }
-
-    @Override
-    public void setExperience(int experience) {
-        this.experience = experience;
     }
 
     @Override

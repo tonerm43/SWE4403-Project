@@ -2,14 +2,23 @@
 Design Patterns project Winter 2019
 
 #### Project Description
-This project is a text-based dungeon crawler video game. The player character navigates from room to room, killing enemies, collecting items, and earning experience points. When enough XP is gained, the player "levels up", making their attacks more powerful, and enemy attacks less powerful.
+This project is a text-based dungeon crawler video game. The player character navigates from room to room, killing enemies, and leveling up, making their attacks more powerful and increasing health.
+As players level up, so do enemies.
 
 #### Patterns implemented
-- Facade
-- Decorator
+- Facade: GameWindowFacade provides a facade to the client
+- Decorator: ScrollingTextDecorator decorates the JLabel by adding a scrolling text effect
+- Builder: PlayerCharacterBuilder provides a builder for creating new or loaded characters
+- Abstract Factory: AbstractCharacterFactory provides an abstract factory for building players and enemies
+- Strategy: Game windows use a strategy pattern to control program flow
+- Memento: Player characters can be saved and loaded back to any state
+- Singleton: Player character is a singleton
+- State: GameArbiter uses a state pattern to determine who's turn it is in combat
+- Flyweight: States are flyweights, we only ever instantiate one of each and reuse the resources
+- 
 
 #### Architecture Used
-- TBD (probably layered with a data layer?)
+- Layered: Application Layer and Data Layer (Text file for convenience)
 
 #### CS4015/SWE4403/CS6015 Project Requirement and Guide
 ##### Project due: Thursday, Apr. 18, 2019 at 4:30 pm (AST). Please note that due to University requirements, no extensions can be given.
