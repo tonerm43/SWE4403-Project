@@ -41,13 +41,13 @@ public class ScrollingTextDecorator extends JLabel {
                         delay = 0;
                         break;
                     case ' ':
-                        delay = 1;//100;
+                        delay = 100;
                         break;
                     case '.':
-                        delay = 1;//500;
+                        delay = 500;
                         break;
                     default:
-                        delay = 1;//300;
+                        delay = 300;
                 }
                 if (delay == 0) {
                     sb.append("<br>");

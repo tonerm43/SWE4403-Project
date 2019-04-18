@@ -28,7 +28,7 @@ public class GameSplashScreen extends GameWindow {
         StringBuilder sb = new StringBuilder();
         sb.append("Welcome to DURGE ...");
         sb.append("\nFew survive the trials ahead");
-        sb.append("\nMay the patterns have mercy\non your mortal soul\n");
+        sb.append("\nMay the patterns have mercy\non your mortal soul . . .\n");
         scrollingLabel.setText(sb.toString());
         this.addButton();
     }
