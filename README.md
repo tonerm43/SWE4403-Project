@@ -1,8 +1,8 @@
-# SWE4403-Project
-Design Patterns project Winter 2019
+# SWE4403-Project: DURGE
+SWE4403 Design Patterns project Winter 2019
 
 #### Project Description
-This project is a text-based dungeon crawler video game. The player character navigates from room to room, killing enemies, and leveling up, making their attacks more powerful and increasing health.
+This project is a text-based dungeon crawler video game. The player character navigates from level to level, killing enemies. Each level makes their attacks more powerful and increases health.
 As players level up, so do enemies.
 
 #### Patterns implemented
@@ -10,15 +10,16 @@ As players level up, so do enemies.
 - Decorator: ScrollingTextDecorator decorates the JLabel by adding a scrolling text effect
 - Builder: PlayerCharacterBuilder provides a builder for creating new or loaded characters
 - Abstract Factory: AbstractCharacterFactory provides an abstract factory for building players and enemies
+- Factory Method: EnemyCharacterFactory and PlayerCharacterFactory use factory methods to create objects
 - Strategy: Game windows use a strategy pattern to control program flow
 - Memento: Player characters can be saved and loaded back to any state
 - Singleton: Player character is a singleton
 - State: GameArbiter uses a state pattern to determine who's turn it is in combat
 - Flyweight: States are flyweights, we only ever instantiate one of each and reuse the resources
-- 
+- Prototype: Both enemies in a level are the same, so one is created and cloned
 
 #### Architecture Used
-- Layered: Application Layer and Data Layer (Text file for convenience)
+- Layered: Application Layer and Data Layer (Data layer uses text files for convenience)
 
 #### CS4015/SWE4403/CS6015 Project Requirement and Guide
 ##### Project due: Thursday, Apr. 18, 2019 at 4:30 pm (AST). Please note that due to University requirements, no extensions can be given.

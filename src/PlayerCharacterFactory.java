@@ -1,10 +1,8 @@
 public class PlayerCharacterFactory extends AbstractCharacterFactory {
 
     public Character createCharacter(String name) {
-        PlayerCharacter character= new PlayerCharacterBuilder()
+        return new PlayerCharacterBuilder()
                 .createNewCharacter(name)
                 .build();
-
-        return character;
     }
 }

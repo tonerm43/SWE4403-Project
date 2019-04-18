@@ -5,8 +5,12 @@ public class GamePlayScreen extends GameWindow {
     public Container playerStats, enemyStats, statusBar;
     public JLabel playerHealth, enemyOneHealth, enemyTwoHealth;
     public JLabel statusLabel;
+    public JButton attackButton, defendButton;
+    public ButtonGroup radioGroup;
+    public JRadioButton enemyOne, enemyTwo;
 
     public void drawWindow() {
+        GameController controller = new GameController(this);
         PlayerCharacter player = PlayerCharacter.getInstance();
         this.setSize(400, 400);
         this.setTitle("DURGE");
@@ -39,16 +43,20 @@ public class GamePlayScreen extends GameWindow {
         outerGridPane.add(actionsPane);
         Container buttonsPane = new Container();
         buttonsPane.setLayout(new GridLayout(2, 1));
-        buttonsPane.add(new JButton("Attack"));
-        buttonsPane.add(new JButton("Defend"));
+        attackButton = new JButton("Attack");
+        attackButton.addActionListener(controller);
+        buttonsPane.add(attackButton);
+        defendButton = new JButton("Defend");
+        defendButton.addActionListener(controller);
+        buttonsPane.add(defendButton);
         actionsPane.add(buttonsPane);
 
         Container radioPane = new Container();
         radioPane.setLayout(new GridLayout(2, 1));
         actionsPane.add(radioPane);
-        JRadioButton enemyOne = new JRadioButton("Enemy 1", true);
-        JRadioButton enemyTwo = new JRadioButton("Enemy 2");
-        ButtonGroup radioGroup = new ButtonGroup();
+        enemyOne = new JRadioButton("Enemy 1", true);
+        enemyTwo = new JRadioButton("Enemy 2");
+        radioGroup = new ButtonGroup();
         radioGroup.add(enemyOne);
         radioGroup.add(enemyTwo);
         radioPane.add(enemyOne);

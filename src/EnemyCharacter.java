@@ -1,29 +1,18 @@
-import java.util.Random;
-
 public class EnemyCharacter extends Character {
-    private static EnemyCharacter instance;
-
     private String name;
     private int health;
     private int attack;
     private int level;
 
-    public static EnemyCharacter getInstance() {
-        if (instance == null) {
-            instance = new EnemyCharacter();
-        }
-        return instance;
-    }
-
-    private EnemyCharacter() {
-
+    public EnemyCharacter(String name) {
+        this.name = name;
     }
 
     @Override
     public void characterFor(int level) {
         this.level = level;
-        this.health = 100 * 25*level;
-        this.attack = 25 + 15*level;
+        this.health = 30 * 25*level;
+        this.attack = 10 + 15*level;
     }
 
     @Override
@@ -69,5 +58,11 @@ public class EnemyCharacter extends Character {
     @Override
     public int attack(Character other) {
         return 0;
+    }
+
+    public EnemyCharacter clone() {
+        EnemyCharacter clone = new EnemyCharacter(DesignPattern.getRandomPattern().toString());
+        clone.characterFor(this.level);
+        return clone;
     }
 }

@@ -1,6 +1,5 @@
 public class GameState {
     private State current;
-    // Keep one instance of state as flyweights
     private PlayerState playerState;
     private EnemyState enemyState;
 
