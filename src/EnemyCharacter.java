@@ -1,22 +1,29 @@
-import java.util.Random;
-
 public class EnemyCharacter extends Character {
-    private static EnemyCharacter instance;
-
+    private String name;
     private int health;
     private int attack;
     private int level;
-    private int experience;
+    private EnemyCharacter next;
 
-    public static EnemyCharacter getInstance() {
-        if (instance == null) {
-            instance = new EnemyCharacter();
-        }
-        return instance;
+    public EnemyCharacter(String name) {
+        this.name = name;
     }
 
-    private EnemyCharacter() {
+    @Override
+    public void characterFor(int level) {
+        this.level = level;
+        this.health = 30 + 25*(level - 1);
+        this.attack = 10 + 15*(level - 1);
+    }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -49,18 +56,23 @@ public class EnemyCharacter extends Character {
         this.level = level;
     }
 
-    @Override
-    public int getExperience() {
-        return experience;
+    public EnemyCharacter clone() {
+        EnemyCharacter clone = new EnemyCharacter(DesignPattern.getRandomPattern().toString());
+        clone.characterFor(this.level);
+        clone.next = null;
+        this.next = clone;
+        return clone;
     }
 
-    @Override
-    public void setExperience(int experience) {
-        this.experience = experience;
+    public String toString() {
+        return "Level " + this.level + " " + this.name + ": " + this.health + " HP";
     }
 
-    @Override
-    public int attack(Character other) {
-        return 0;
+    public EnemyIterator getIterator() {
+        return new EnemyIterator(this);
+    }
+
+    public EnemyCharacter getNext() {
+        return this.next;
     }
 }

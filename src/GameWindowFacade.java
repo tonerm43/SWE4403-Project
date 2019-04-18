@@ -18,13 +18,17 @@ public class GameWindowFacade extends JFrame implements ActionListener {
     }
 
     public void newGame(String playerName) {
-        PlayerMemento pm = new PlayerMemento();
-        pm.savePlayer(playerName);
+        AbstractCharacterFactory factory = AbstractCharacterFactory.getFactory(CharacterType.PLAYER);
+        factory.createCharacter(playerName);
+        windowStrategy = new GamePlayScreen();
+        windowStrategy.drawWindow();
     }
 
     public void loadGame(String playerName) {
-        PlayerMemento pm = new PlayerMemento();
-        pm.loadPlayer(playerName);
+        PlayerCharacterBuilder builder = new PlayerCharacterBuilder();
+        builder.loadCharacter(playerName);
+        windowStrategy = new GamePlayScreen();
+        windowStrategy.drawWindow();
     }
 
     @Override
@@ -33,8 +37,10 @@ public class GameWindowFacade extends JFrame implements ActionListener {
             windowStrategy.destroy();
             mainMenu();
         } else if (e.getSource().equals(newGame)) {
+            windowStrategy.destroy();
             newGame(playerName.getText());
         } else if (e.getSource().equals(loadGame)) {
+            windowStrategy.destroy();
             loadGame(playerName.getText());
         }
     }

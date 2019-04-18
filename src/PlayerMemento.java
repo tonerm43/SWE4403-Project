@@ -43,8 +43,8 @@ public class PlayerMemento {
             try {
                 Scanner sc = new Scanner(file);
                 playerSave = sc.nextLine();
-                System.out.println(name + ".save: " + playerSave);
                 sc.close();
+                System.out.println("File loaded: " + file.getAbsolutePath());
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
